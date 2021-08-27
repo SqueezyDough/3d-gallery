@@ -11,7 +11,7 @@ const Box = props => {
   const [hovered, setHover] = useState(false)
   const [active, setActive] = useState(false)
   // Subscribe this component to the render-loop, rotate the mesh every frame
-  useFrame((state, delta) => (ref.current.rotation.x += 0.01))
+  useFrame((state, delta) => (ref.current.rotation.x += 0.02))
   // Return the view, these are regular Threejs elements expressed in JSX
 
   return (
@@ -24,8 +24,8 @@ const Box = props => {
         onClick={event => setActive(!active)}
         onPointerOver={event => setHover(true)}
         onPointerOut={event => setHover(false)}>
-        <boxGeometry args={[1, 1, 1]} />
-        <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
+        <boxGeometry args={[3, 3, 3]} />
+        <meshStandardMaterial color={hovered ? 'black' : 'white'} />
       </mesh>
     </>
   )
