@@ -22,6 +22,10 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  canvas {
+    min-height: 100vh;
+  }
+
 `
 
 export default GlobalStyle

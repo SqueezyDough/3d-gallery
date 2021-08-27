@@ -1,5 +1,4 @@
-import Box from '../scenes/example/box'
-import { Canvas } from '@react-three/fiber'
+import TheBox from '../scenes/theBox'
 
 export default function Home() {
   return (
@@ -8,11 +7,7 @@ export default function Home() {
         {/* TODO: Build header component */}
       </header>
       <main>
-        <Canvas>
-          <ambientLight/>
-          <pointLight position={[10, 10, 10]} />
-          <Box position={[0, 0, 0]} />
-        </Canvas>
+        <TheBox />
       </main>
 
       <footer>
