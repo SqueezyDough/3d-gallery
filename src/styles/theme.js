@@ -9,12 +9,12 @@ const theme = {
   secondaryColorDark: '#000000',
   secondaryColorLight: '#FFFFFF',
 
-  fontSizeXS: '18px',
-  fontSizeS: '30px',
-  fontSizeM: '60px',
-  fontSizeL: '80px',
-  fontSizeXL: '100px',
-  fontSizeXXL: '120px',
+  fontSizeXS: '12px',
+  fontSizeS: '16px',
+  fontSizeM: '24px',
+  fontSizeL: '36px',
+  fontSizeXL: '48px',
+  fontSizeXXL: '64px',
 
   transition: '.2s'
 }
