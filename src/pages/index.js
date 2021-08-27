@@ -1,6 +1,5 @@
-import ReactDOM from 'react-dom'
 import Box from '../scenes/example/box'
-import { Canvas, useFrame } from '@react-three/fiber'
+import { Canvas } from '@react-three/fiber'
 
 export default function Home() {
   return (

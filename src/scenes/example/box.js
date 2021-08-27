@@ -2,7 +2,7 @@
 
 
 import React, { useRef, useState } from 'react'
-import { Canvas, useFrame } from '@react-three/fiber'
+import { useFrame } from '@react-three/fiber'
 
 const Box = props => {
   // This reference will give us direct access to the THREE.Mesh object
