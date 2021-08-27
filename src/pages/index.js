@@ -1,8 +1,20 @@
+import ReactDOM from 'react-dom'
+import Box from '../scenes/example/box'
+import { Canvas, useFrame } from '@react-three/fiber'
+
 export default function Home() {
   return (
     <>
+      <header>
+        {/* TODO: Build header component */}
+      </header>
       <main>
-        {/* TODO: Build Main components */}
+        <Canvas>
+          <ambientLight />
+          <pointLight position={[10, 10, 10]} />
+          <Box position={[-1.2, 0, 0]} />
+          <Box position={[1.2, 0, 0]} />
+        </Canvas>
       </main>
 
       <footer>
