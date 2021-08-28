@@ -8,10 +8,6 @@ import Plane from '../objects/plane'
 const TheBox = ({ className }) => {
   return (
     <div className={ className }>
-      <header>
-        <h1>The Box</h1>
-      </header>
-
       <Canvas>
         <OrbitControls />
         <ambientLight/>
@@ -27,17 +23,5 @@ const TheBox = ({ className }) => {
 }
 
 export default styled(TheBox)`
-header {
-  position: absolute;
-  pointer-events: none;
-  width: 100%;
-
-  h1 {
-    position: relative;
-    z-index: 99;
-    font-size: ${({ theme }) => theme.fontSizeXXL};
-    text-align: center;
-    mix-blend-mode: difference;
-  }
-}
+background-color: ${({ theme }) => theme.black};
 `

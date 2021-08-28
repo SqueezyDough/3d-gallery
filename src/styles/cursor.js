@@ -1,3 +1,4 @@
+// adopted from: https://medium.com/swlh/cool-custom-cursors-with-react-framer-motion-part-1-228126bcae68
 import React, { useEffect } from 'react'
 import { motion, useMotionValue, useSpring } from 'framer-motion'
 import styled from 'styled-components'
@@ -6,7 +7,7 @@ const Cursor = ({ className }) => {
   const cursorX = useMotionValue(-100)
   const cursorY = useMotionValue(-100)
 
-  const springConfig = { damping: 36, stiffness: 600 }
+  const springConfig = { damping: 30, stiffness: 600 }
   const cursorXSpring = useSpring(cursorX, springConfig)
   const cursorYSpring = useSpring(cursorY, springConfig)
 

@@ -1,3 +1,4 @@
+import SceneWrapper from '../scenes/sceneWrapper'
 import TheBox from '../scenes/theBox'
 
 export default function Home() {
@@ -7,7 +8,10 @@ export default function Home() {
         {/* TODO: Build header component */}
       </header>
       <main>
-        <TheBox />
+        <SceneWrapper title='The Box'>
+          <TheBox />
+        </SceneWrapper>
+
       </main>
 
       <footer>

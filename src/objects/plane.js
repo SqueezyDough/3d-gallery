@@ -10,7 +10,7 @@ const Plane = props => {
     <>
       <mesh ref={ref} rotation={[-Math.PI / 2, 0, 0]} {...props}>
         <planeGeometry attach='geometry' args={[100, 100]} />
-        <meshLambertMaterial attach='material' color='black' />
+        <meshLambertMaterial attach='material' color='white' />
       </mesh>
     </>
   )

@@ -2,12 +2,10 @@ const theme = {
   headerFont: '\'Noto Serif\', serif;',
   bodyFont: '\'Poppins\', sans-serif;',
 
-  primaryColor: '#FFDD67',
-  primaryColorDark: '#FFCD38',
-  primaryColorLight: '#FFFBE0',
-  secondaryColor: '#222831',
-  secondaryColorDark: '#000000',
-  secondaryColorLight: '#FFFFFF',
+  black: '#000',
+  white: '#fff',
+
+  primaryColor: '#ffed00',
 
   fontSizeXS: '12px',
   fontSizeS: '16px',
