@@ -1,7 +1,6 @@
 //adopted from https://github.com/pmndrs/react-three-fiber
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 import { useBox } from '@react-three/cannon'
-import { useFrame } from '@react-three/fiber'
 
 const Box = props => {
   const [ref, api] = useBox(() => ({ mass: 1, position: [0, 10, 0] }))
