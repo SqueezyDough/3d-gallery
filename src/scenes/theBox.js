@@ -14,7 +14,7 @@ const TheBox = ({ className }) => {
         <Stars />
         <pointLight position={[10, 10, 10]} />
         <Physics>
-          <Box position={[0, 2, 0]} />
+          <Box />
           <Plane position={[0, 0, 0]} />
         </Physics>
       </Canvas>

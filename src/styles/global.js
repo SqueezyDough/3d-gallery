@@ -26,6 +26,11 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     cursor: none;
   }
+
+  canvas {
+    position: relative;
+    z-index: 0;
+  }
 `
 
 export default GlobalStyle
