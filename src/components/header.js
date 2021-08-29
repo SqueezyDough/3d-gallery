@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import LvbIcon from '../assets/lvbIcon'
+import Image from 'next/image'
 import LinkedInIcon from '../assets/linkedInIcon'
 import GithubIcon from '../assets/githubIcon'
 
@@ -16,10 +16,17 @@ const Header = ({ className }) => {
 
      <nav className='nav'>
       <div className='nav__menu'>
-        <LvbIcon className='nav__menu__icon' />
-        <div id="circle-orbit-container">
-          <div id="inner-orbit">
-            <div className="inner-orbit-circles">
+        <Image
+          src='/lvb-icon.png'
+          alt='socials'
+          width={64}
+          height={64}
+          priority='true'
+          className='nav__menu__icon'
+        />
+        <div id='circle-orbit-container'>
+          <div id='inner-orbit'>
+            <div className='inner-orbit-circles'>
               <a className='nav__menu__link' href='https://github.com/SqueezyDough' target='_blank' rel='noreferrer'>
                 <span className='nav__external'>GitHub</span>
                 <GithubIcon />
@@ -27,8 +34,8 @@ const Header = ({ className }) => {
             </div>
           </div>
 
-          <div id="middle-orbit">
-            <div className="middle-orbit-circles">
+          <div id='middle-orbit'>
+            <div className='middle-orbit-circles'>
               <a className='nav__menu__link' href='https://www.linkedin.com/in/leroy-van-biljouw-0691b01a9/' target='_blank' rel='noreferrer'>
                 <span className='nav__external'>LinkedIn</span>
                 <LinkedInIcon />
@@ -36,8 +43,8 @@ const Header = ({ className }) => {
             </div>
           </div>
 
-          <div id="outer-orbit">
-            <div className="outer-orbit-circles"></div>
+          <div id='outer-orbit'>
+            <div className='outer-orbit-circles'></div>
           </div>
         </div>
       </div>
@@ -88,10 +95,12 @@ overflow: hidden;
 
   &__menu {
     position: relative;
+    margin-right: 1rem;
     max-height: 124px;
 
     &__icon {
       margin: 1rem 2rem;
+      border-radius: 50%;
     }
 
     &__link {
