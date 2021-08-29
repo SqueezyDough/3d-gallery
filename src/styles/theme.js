@@ -15,15 +15,17 @@ const theme = {
     md: '32px',
     lg: '64px',
     xl: '72px',
-    xxl: '96px'
+    xxl: '96px',
+    xxxl: '164px'
   },
 
   // spacings
-  spacing: {
+  spacings: {
     xs: '.5rem',
     sm: '1rem',
     md: '1.5rem',
-    lg: '3rem',
+    lg: '2rem',
+    xl: '4rem',
   },
 
   // responsive

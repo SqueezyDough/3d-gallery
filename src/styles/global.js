@@ -31,6 +31,11 @@ a {
   cursor: none;
 }
 
+main {
+  margin: 0 auto;
+  max-width: 80rem;
+}
+
 canvas {
   position: relative;
   z-index: 0;

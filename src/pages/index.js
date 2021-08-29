@@ -7,10 +7,9 @@ export default function Home() {
     <>
       <Header />
       <main>
-        <SceneWrapper title='The Box'>
+        <SceneWrapper index='1' title='The Box'>
           <TheBox />
         </SceneWrapper>
-
       </main>
 
       <footer>

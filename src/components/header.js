@@ -56,23 +56,21 @@ const Header = ({ className }) => {
 export default styled(Header)`
 display: flex;
 justify-content: space-between;
-width: 100%;
-height: 124px;
-overflow: hidden;
+margin: 0 auto;
+max-width: 80rem;
 
 .page-header {
   display: flex;
-  padding: ${({ theme }) => theme.spacing.sm};
+  padding: ${({ theme }) => theme.spacings.sm};
 
   &__section {
-    border: 1px solid white;
     &__title-p1 {
-      padding: ${({ theme }) => theme.spacing.xs};
+      padding: ${({ theme }) => theme.spacings.xs};
       font-family: ${({ theme }) => theme.fonts.headerBoldItalic};
     }
 
     &__title-p2 {
-      padding: ${({ theme }) => theme.spacing.xs};
+      padding: ${({ theme }) => theme.spacings.xs};
       font-family: ${({ theme }) => theme.fonts.body};
       border: 2px solid ${({ theme }) => theme.colors.black};
       border-radius: 5px;
@@ -82,6 +80,8 @@ overflow: hidden;
 }
 
 .nav {
+  height: 172px;
+  position: relative;
   align-self: center;
   transition: .3s;
 
@@ -95,8 +95,7 @@ overflow: hidden;
 
   &__menu {
     position: relative;
-    margin-right: ${({ theme }) => theme.spacing.sm};
-    max-height: 124px;
+    margin: 2rem ${({ theme }) => theme.spacings.sm} 0 0;
 
     &__icon {
       margin: 1rem 2rem;
@@ -106,7 +105,6 @@ overflow: hidden;
     &__link {
       display: inline-block;
       position: relative;
-      z-index: 998;
       height: 32px;
       background-color: white;
       border-radius: 50%;
