@@ -4,7 +4,7 @@ import { fonts } from './fonts'
 const GlobalStyle = createGlobalStyle`
 ${fonts}
 
-body {
+body, html {
   margin: 0;
   padding: ${({ theme }) => theme.spacings.sm};
   min-height: 100vh;
@@ -15,6 +15,7 @@ body {
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   overflow-x: hidden;
+  background-color: white;
 
   @media only screen and (min-width: ${({ theme }) => theme.screens.xl}) {
     padding: 0;

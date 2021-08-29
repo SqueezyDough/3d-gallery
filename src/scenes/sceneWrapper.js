@@ -25,11 +25,10 @@ export default styled(Scene)`
 display: flex;
 justify-content: space-between;
 flex-direction: column;
-position: relative;
 
 @media only screen and (min-width: ${({ theme }) => theme.screens.lg}) {
   flex-direction: row;
-  margin-top: ${({ theme }) => theme.spacings.xl};
+  padding-top: ${({ theme }) => theme.spacings.xl};
 }
 
 .index {
