@@ -35,7 +35,6 @@ position: relative;
 .index {
   font-family: ${({ theme }) => theme.fonts.headerBoldItalic};
   font-size: ${({ theme }) => theme.fontSize.xxl};
-  mix-blend-mode: difference;
   color: ${({ theme }) => theme.colors.black};
 
   @media only screen and (min-width: ${({ theme }) => theme.screens.lg}) {
