@@ -14,41 +14,42 @@ const Header = ({ className }) => {
         </section>
       </h1>
 
-     <nav className='nav'>
-      <div className='nav__menu'>
-        <Image
-          src='/lvb-icon.png'
-          alt='socials'
-          width={64}
-          height={64}
-          priority='true'
-          className='nav__menu__icon'
-        />
-        <div id='circle-orbit-container'>
-          <div id='inner-orbit'>
-            <div className='inner-orbit-circles'>
-              <a className='nav__menu__link' href='https://github.com/SqueezyDough' target='_blank' rel='noreferrer'>
-                <span className='nav__external'>GitHub</span>
-                <GithubIcon />
-              </a>
+      <nav className='nav'>
+        <div className='nav__menu'>
+          <h2 className='nav__menu__title'>Socials</h2>
+          <Image
+            src='/lvb-icon.png'
+            alt='socials'
+            width={64}
+            height={64}
+            priority='true'
+            className='nav__menu__icon'
+          />
+          <div id='circle-orbit-container'>
+            <div id='inner-orbit'>
+              <div className='inner-orbit-circles'>
+                <a className='nav__menu__link' href='https://github.com/SqueezyDough' target='_blank' rel='noreferrer'>
+                  <span className='nav__external'>GitHub</span>
+                  <GithubIcon />
+                </a>
+              </div>
             </div>
-          </div>
 
-          <div id='middle-orbit'>
-            <div className='middle-orbit-circles'>
-              <a className='nav__menu__link' href='https://www.linkedin.com/in/leroy-van-biljouw-0691b01a9/' target='_blank' rel='noreferrer'>
-                <span className='nav__external'>LinkedIn</span>
-                <LinkedInIcon />
-              </a>
+            <div id='middle-orbit'>
+              <div className='middle-orbit-circles'>
+                <a className='nav__menu__link' href='https://www.linkedin.com/in/leroy-van-biljouw-0691b01a9/' target='_blank' rel='noreferrer'>
+                  <span className='nav__external'>LinkedIn</span>
+                  <LinkedInIcon />
+                </a>
+              </div>
             </div>
-          </div>
 
-          <div id='outer-orbit'>
-            <div className='outer-orbit-circles'></div>
+            <div id='outer-orbit'>
+              <div className='outer-orbit-circles'></div>
+            </div>
           </div>
         </div>
-      </div>
-     </nav>
+      </nav>
     </header>
   )
 }
@@ -85,11 +86,16 @@ max-width: 80rem;
   align-self: center;
   transition: .3s;
 
+  // Show socials on hover or focus
   &:hover, &:focus {
     transform: scale(1.1);
 
     #circle-orbit-container  {
       opacity: 1;
+    }
+
+    .nav__menu__title {
+      opacity: .2;
     }
   }
 
@@ -108,7 +114,15 @@ max-width: 80rem;
       height: 32px;
       background-color: white;
       border-radius: 50%;
-      transition: .3s;
+      transition: ${({ theme }) => theme.transition};
+    }
+
+    &__title {
+      position: absolute;
+      z-index: 10;
+      transform: translate(-120%, -6px);
+      font-family: ${({ theme }) => theme.fonts.headerBoldItalic};
+      transition: ${({ theme }) => theme.transition};
     }
   }
 
@@ -119,7 +133,7 @@ max-width: 80rem;
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
-    transition: .3s;
+    transition: ${({ theme }) => theme.transition};
   }
 
   #inner-orbit {
