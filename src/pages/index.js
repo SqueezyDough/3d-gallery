@@ -1,4 +1,5 @@
 import Header from '../components/header'
+import Footer from '../components/footer'
 import SceneWrapper from '../scenes/sceneWrapper'
 import TheBox from '../scenes/theBox'
 
@@ -11,10 +12,7 @@ export default function Home() {
           <TheBox />
         </SceneWrapper>
       </main>
-
-      <footer>
-        {/* TODO: Build footer component */}
-      </footer>
+      <Footer />
     </>
   )
 }

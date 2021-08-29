@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import Image from 'next/image'
 import LinkedInIcon from '../assets/linkedInIcon'
 import GithubIcon from '../assets/githubIcon'
