@@ -14,6 +14,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
+  overflow-x: hidden;
 
   @media only screen and (min-width: ${({ theme }) => theme.screens.xl}) {
     padding: 0;

@@ -59,7 +59,6 @@ display: flex;
 justify-content: space-between;
 margin: 0 auto;
 max-width: ${({ theme }) => theme.screens.xl};
-overflow-x: hidden;
 
 .page-header {
   display: flex;
