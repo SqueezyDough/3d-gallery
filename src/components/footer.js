@@ -31,21 +31,23 @@ const Footer = ({ className }) => {
 
 export default styled(Footer)`
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  width: calc(100% - 2rem);
   max-width: ${({ theme }) => theme.screens.xl};
-  margin: 8rem auto;
+  height: 10rem;
+  margin: 4rem auto 0;
+  padding: ${({ theme }) => theme.spacings.sm} 0;
   border-top: 1px solid black;
-  padding: 1rem;
 
-  @media only screen and (min-width: ${({ theme }) => theme.screens.xl}) {
-    padding: 1rem 0;
+  @media only screen and (min-width: ${({ theme }) => theme.screens.sm}) {
+    height: auto;
+    flex-direction: row;
+    margin: 8rem auto 0;
   }
 
   .nav__menu {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
     margin: 0;
     padding: 0;
     width: 5rem;

@@ -6,7 +6,7 @@ ${fonts}
 
 body {
   margin: 0;
-  padding: 0;
+  padding: ${({ theme }) => theme.spacings.sm};
   min-height: 100vh;
   font-family: ${({ theme }) => theme.fonts.body};
   line-height: 1.5;
@@ -14,6 +14,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
+
+  @media only screen and (min-width: ${({ theme }) => theme.screens.xl}) {
+    padding: 0;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {

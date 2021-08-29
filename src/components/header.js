@@ -81,7 +81,6 @@ max-width: ${({ theme }) => theme.screens.xl};
 }
 
 .nav {
-  height: 172px;
   position: relative;
   align-self: center;
   transition: .3s;
@@ -101,7 +100,7 @@ max-width: ${({ theme }) => theme.screens.xl};
 
   &__menu {
     position: relative;
-    margin: 2rem 0 0;
+    margin: 1rem 0 0;
 
     &__icon {
       margin: 1rem 2rem;

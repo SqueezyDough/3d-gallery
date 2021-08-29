@@ -24,21 +24,29 @@ const Scene = ({ className, children, title, index} ) => {
 export default styled(Scene)`
 display: flex;
 justify-content: space-between;
+flex-direction: column;
 position: relative;
-margin: ${({ theme }) => theme.spacings.sm} 0;
+
+@media only screen and (min-width: ${({ theme }) => theme.screens.lg}) {
+  flex-direction: row;
+  margin-top: ${({ theme }) => theme.spacings.xl};
+}
 
 .index {
   font-family: ${({ theme }) => theme.fonts.headerBoldItalic};
-  font-size: ${({ theme }) => theme.fontSize.xxxl};
-  line-height: ${({ theme }) => theme.fontSize.xl};
+  font-size: ${({ theme }) => theme.fontSize.xxl};
   mix-blend-mode: difference;
   color: ${({ theme }) => theme.colors.black};
+
+  @media only screen and (min-width: ${({ theme }) => theme.screens.lg}) {
+    font-size: ${({ theme }) => theme.fontSize.xxxl};
+    margin-right: ${({ theme }) => theme.spacings.sm};
+  }
 }
 
 header {
   position: relative;
   pointer-events: none;
-  max-width: 80rem;
   width: 100%;
 
   h1 {
@@ -47,17 +55,18 @@ header {
     left: 50%;
     z-index: 10;
     margin: 0;
+    width: 100%;
+    text-align: center;
     transform: translateX(-50%);
     font-family: ${({ theme }) => theme.fonts.headerBoldItalic};
     font-size: ${({ theme }) => theme.fontSize.xxl};
     line-height: ${({ theme }) => theme.fontSize.xl};
-    color: ${({ theme }) => theme.colors.white};;
+    color: ${({ theme }) => theme.colors.white};
     mix-blend-mode: difference;
   }
 }
 
 .scene {
-  max-width: 80rem;
   width: 100%;
   overflow: hidden;
 
