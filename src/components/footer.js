@@ -33,6 +33,7 @@ export default styled(Footer)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   max-width: ${({ theme }) => theme.screens.xl};
   height: 10rem;
   margin: 4rem auto 0;

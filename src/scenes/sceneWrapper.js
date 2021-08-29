@@ -59,10 +59,14 @@ header {
     text-align: center;
     transform: translateX(-50%);
     font-family: ${({ theme }) => theme.fonts.headerBoldItalic};
-    font-size: ${({ theme }) => theme.fontSize.xxl};
+    font-size: ${({ theme }) => theme.fontSize.xl};
     line-height: ${({ theme }) => theme.fontSize.xl};
     color: ${({ theme }) => theme.colors.white};
     mix-blend-mode: difference;
+
+    @media only screen and (min-width: ${({ theme }) => theme.screens.lg}) {
+      font-size: ${({ theme }) => theme.fontSize.xxl};
+    }
   }
 }
 
