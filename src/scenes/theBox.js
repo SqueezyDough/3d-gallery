@@ -23,5 +23,5 @@ const TheBox = ({ className }) => {
 }
 
 export default styled(TheBox)`
-background-color: ${({ theme }) => theme.black};
+background-color: ${({ theme }) => theme.colors.black};
 `

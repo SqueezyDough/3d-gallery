@@ -43,7 +43,7 @@ export default styled(Cursor)`
   top: 0;
   width: 32px;
   height: 32px;
-  border-radius: 16px;
+  border-radius: 50%;
   background-color: whitesmoke;
   mix-blend-mode: difference;
   z-index: 999;

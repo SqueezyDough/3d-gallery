@@ -21,7 +21,7 @@ header {
   h1 {
     position: relative;
     z-index: 99;
-    font-size: ${({ theme }) => theme.fontSizeXXL};
+    font-size: ${({ theme }) => theme.fontSize.xxl};
     text-align: center;
     color: white;
     mix-blend-mode: difference;

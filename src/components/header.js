@@ -9,8 +9,8 @@ const Header = ({ className }) => {
     <header className={className}>
       <h1 className='page-header'>
         <section className='page-header__section'>
-          <span className='page-header__section__title-light'>Three</span>
-          <span className='page-header__section__title-dark'>JS</span>
+          <span className='page-header__section__title-p1'>Three</span>
+          <span className='page-header__section__title-p2'>JS</span>
         </section>
       </h1>
 
@@ -62,21 +62,21 @@ overflow: hidden;
 
 .page-header {
   display: flex;
-  padding: 1rem;
+  padding: ${({ theme }) => theme.spacing.sm};
 
   &__section {
     border: 1px solid white;
-    &__title-light {
-      padding: .5rem;
-      border: 1px solid black;
-      flex-grow: 1;
+    &__title-p1 {
+      padding: ${({ theme }) => theme.spacing.xs};
+      font-family: ${({ theme }) => theme.fonts.headerBoldItalic};
     }
 
-    &__title-dark {
-      padding: .5rem;
-      background-color: black;
-      border: 1px solid black;
-      color: white;
+    &__title-p2 {
+      padding: ${({ theme }) => theme.spacing.xs};
+      font-family: ${({ theme }) => theme.fonts.body};
+      border: 2px solid ${({ theme }) => theme.colors.black};
+      border-radius: 5px;
+      color: ${({ theme }) => theme.colors.black};
     }
   }
 }
@@ -95,7 +95,7 @@ overflow: hidden;
 
   &__menu {
     position: relative;
-    margin-right: 1rem;
+    margin-right: ${({ theme }) => theme.spacing.sm};
     max-height: 124px;
 
     &__icon {
