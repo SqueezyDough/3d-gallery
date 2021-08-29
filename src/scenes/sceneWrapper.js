@@ -23,8 +23,9 @@ const Scene = ({ className, children, title, index} ) => {
 
 export default styled(Scene)`
 display: flex;
+justify-content: space-between;
 position: relative;
-margin: ${({ theme }) => theme.spacings.lg};
+margin: ${({ theme }) => theme.spacings.sm} 0;
 
 .index {
   font-family: ${({ theme }) => theme.fonts.headerBoldItalic};

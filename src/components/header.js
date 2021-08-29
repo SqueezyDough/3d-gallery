@@ -58,15 +58,15 @@ export default styled(Header)`
 display: flex;
 justify-content: space-between;
 margin: 0 auto;
-max-width: 80rem;
+max-width: ${({ theme }) => theme.screens.xl};
 
 .page-header {
   display: flex;
-  padding: ${({ theme }) => theme.spacings.sm};
+  padding: ${({ theme }) => theme.spacings.sm} 0;
 
   &__section {
     &__title-p1 {
-      padding: ${({ theme }) => theme.spacings.xs};
+      margin-right: ${({ theme }) => theme.spacings.sm};
       font-family: ${({ theme }) => theme.fonts.headerBoldItalic};
     }
 
@@ -101,7 +101,7 @@ max-width: 80rem;
 
   &__menu {
     position: relative;
-    margin: 2rem ${({ theme }) => theme.spacings.sm} 0 0;
+    margin: 2rem 0 0;
 
     &__icon {
       margin: 1rem 2rem;

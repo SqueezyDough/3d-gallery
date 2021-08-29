@@ -32,10 +32,15 @@ const Footer = ({ className }) => {
 export default styled(Footer)`
   display: flex;
   justify-content: space-between;
-  max-width: 80rem;
+  width: calc(100% - 2rem);
+  max-width: ${({ theme }) => theme.screens.xl};
   margin: 8rem auto;
   border-top: 1px solid black;
-  padding: 1rem 0;
+  padding: 1rem;
+
+  @media only screen and (min-width: ${({ theme }) => theme.screens.xl}) {
+    padding: 1rem 0;
+  }
 
   .nav__menu {
     display: flex;

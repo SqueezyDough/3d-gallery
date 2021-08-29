@@ -28,7 +28,7 @@ const theme = {
     xl: '4rem',
   },
 
-  // responsive
+  // media queries
   screens: {
     xs: '360px',
     sm: '640px',

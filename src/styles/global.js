@@ -33,7 +33,7 @@ a {
 
 main {
   margin: 0 auto;
-  max-width: 80rem;
+  max-width: ${({ theme }) => theme.screens.xl};
 }
 
 canvas {
