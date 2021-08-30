@@ -59,19 +59,11 @@ z-index: 1;
 }
 
 .nav {
-  &__icon {
-    margin: 1rem 2rem;
-    border-radius: 50%;
-  }
-
   &__link {
     display: inline-block;
     margin-left: ${({ theme }) => theme.spacings.sm};
-    position: relative;
     height: 32px;
-    background-color: white;
     border-radius: 50%;
-    transition: ${({ theme }) => theme.transition};
   }
 }
 
