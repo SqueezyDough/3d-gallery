@@ -2,15 +2,12 @@
 import React, { useState, useEffect } from 'react'
 import { motion, useMotionValue, useSpring } from 'framer-motion'
 import styled from 'styled-components'
-import classNames from 'classnames'
 
 const Cursor = ({ className }) => {
-  // cursor x and y position
-  const cursorX = useMotionValue(-100)
-  const cursorY = useMotionValue(-100)
-
-  const InnerCursorX = useMotionValue(-100)
-  const InnerCursorY = useMotionValue(-100)
+  const cursorX = useMotionValue(-100),
+        cursorY = useMotionValue(-100),
+        InnerCursorX = useMotionValue(-100),
+        InnerCursorY = useMotionValue(-100)
 
   // cursor behaviour
   const cursorSpringConfig = { damping: 20, stiffness: 250 }
@@ -22,6 +19,7 @@ const Cursor = ({ className }) => {
   const InnerCursorXSpring = useSpring(InnerCursorX, InnerCursorSpringConfig)
   const InnerCursorYSpring = useSpring(InnerCursorY, InnerCursorSpringConfig)
 
+  // state management
   const [linkHovered, setLinkHovered] = useState(false)
   const [clicked, setClicked] = useState(false)
 
@@ -74,40 +72,48 @@ const Cursor = ({ className }) => {
     window.removeEventListener('mouseup', onMouseUp)
   }
 
-  const cursorClasses = classNames(
-    className,
-    'cursor',
-    {
-      'cursor--clicked': clicked,
-      'cursor--link-hovered': linkHovered
+  const variants = {
+    clicked: {
+      scale: [1, 2, 1.5],
+    },
+    hovered: {
+      scale: [1, 4, 4, 3, 3],
+      borderRadius: ['20%', '30%', '40%', '50%'],
+      rotate: [0, 0, 270],
+      transition: {duration: 1}
+    },
+    default: {
+      borderRadius: '50%',
     }
-  )
+  }
 
   return (
-    <>
+    <div className={ className }>
       <motion.div
-        className={ cursorClasses }
+        className='cursor'
+        animate={[
+          clicked ? 'clicked' : 'default',
+          linkHovered ? 'hovered' : 'default'
+        ]}
+        variants={variants}
         style={{
           left: cursorXSpring,
           top: cursorYSpring,
         }}
       />
       <motion.div
-        className='cursor--inner'
+        className='cursor -inner'
         style={{
           left: InnerCursorXSpring,
           top: InnerCursorYSpring,
         }}
       />
-    </>
+    </div>
   )
 }
 
 export default styled(Cursor)`
-transition: ${({ theme }) => theme.transition};
-transition-property: transform, background-color, mix-blend-mode;
-
-&.cursor {
+.cursor {
   position: fixed;
   width: 32px;
   height: 32px;
@@ -116,28 +122,11 @@ transition-property: transform, background-color, mix-blend-mode;
   mix-blend-mode: difference;
   z-index: 10;
   pointer-events: none;
+}
 
-  &.cursor--clicked {
-    transform: scale(0.8);
-  }
-
-  &.cursor--link-hovered {
-    transform: scale(3);
-    background-color: red;
-    opacity: .6;
-  }
-
-  ~ .cursor--inner {
-    position: fixed;
-    width: 8px;
-    height: 8px;
-    // align to outer cursor center
-    transform: translate(50%, 50%);
-    border-radius: 50%;
-    background-color: white;
-    mix-blend-mode: difference;
-    z-index: 10;
-    pointer-events: none;
-  }
+.-inner {
+  width: 8px;
+  height: 8px;
+  transform: translate(50%, 50%);
 }
 `
