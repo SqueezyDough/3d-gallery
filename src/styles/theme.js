@@ -12,9 +12,9 @@ const theme = {
   fontSize: {
     xs: '12px',
     sm: '16px',
-    md: '32px',
-    lg: '64px',
-    xl: '72px',
+    md: '24px',
+    lg: '32px',
+    xl: '64px',
     xxl: '96px',
     xxxl: '164px'
   },

@@ -121,8 +121,9 @@ z-index: 1;
     &__title {
       position: absolute;
       z-index: 10;
-      transform: translate(-120%, -6px);
+      transform: translate(-120%, 6px);
       font-family: ${({ theme }) => theme.fonts.headerBoldItalic};
+      font-size: ${({ theme }) => theme.fontSize.sm};
       transition: ${({ theme }) => theme.transition};
     }
   }
