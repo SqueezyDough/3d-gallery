@@ -4,6 +4,7 @@ import { motion, useMotionValue, useSpring } from 'framer-motion'
 import styled from 'styled-components'
 
 const Cursor = ({ className }) => {
+  // starting cursor position
   const cursorX = useMotionValue(-100),
         cursorY = useMotionValue(-100),
         InnerCursorX = useMotionValue(-100),

@@ -99,8 +99,6 @@ header {
   }
 
   &__meta {
-
-
     @media only screen and (min-width: ${({ theme }) => theme.screens.lg}) {
       display: flex;
 
