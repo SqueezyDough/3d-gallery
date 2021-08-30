@@ -32,7 +32,11 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
   color: inherit;
-  text-decoration: none;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
 }
 
 * {

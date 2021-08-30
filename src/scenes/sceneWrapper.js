@@ -1,27 +1,49 @@
 import styled from 'styled-components'
+import { noop } from '../utils'
 
-const Scene = ({ className, children, title, index} ) => {
+const SceneWrapper = ({ className, scene, index }) => {
   return (
     <div className={ className }>
-      <span className='index'>{index ? index : 'xx'}.</span>
+      <span className='index'>{index}.</span>
 
       <article className='scene'>
         <header>
-          <h1>{title ? title : 'Unnamed scene'}</h1>
+          <h1>{scene.meta.title ? scene.meta.title : 'Unnamed scene'}</h1>
         </header>
 
-        {children}
+        <main>
+          {scene.canvas}
+        </main>
 
-        <footer className='scene__description'>
-          <h2>Description</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+        {/* Show metadata if available  */}
+        {scene.meta ? (
+          <footer className='scene__meta'>
+            <div className='scene__meta__description'>
+              <h2>Description</h2>
+              <p>{scene.meta.description}</p>
+            </div>
+            {scene.meta.references ? (
+              <div className='scene__meta__references'>
+              <h2>References</h2>
+              <ul>
+                {scene.meta.references.map((reference, index) => {
+                  return <li key={index}>
+                    <a href={reference.link} target='_blank' rel="noreferrer">
+                      {reference.title}
+                    </a>
+                  </li>
+                })}
+              </ul>
+            </div>
+          ) : noop()}
         </footer>
+        ) : noop()}
       </article>
     </div>
   )
 }
 
-export default styled(Scene)`
+export default styled(SceneWrapper)`
 display: flex;
 justify-content: space-between;
 flex-direction: column;
@@ -76,8 +98,20 @@ header {
     min-height: 40rem;
   }
 
-  &__description {
-    max-width: 30rem;
+  &__meta {
+
+
+    @media only screen and (min-width: ${({ theme }) => theme.screens.lg}) {
+      display: flex;
+
+      &__references {
+        margin: 0 ${({ theme }) => theme.spacings.xl}
+      }
+    }
+
+    &__description {
+      max-width: 30rem;
+    }
   }
 }
 `

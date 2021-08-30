@@ -140,7 +140,7 @@ z-index: 1;
 
   #inner-orbit {
     position: relative;
-    z-index: 2;
+    z-index: 1;
     width: 88px;
     height:  88px;
     border: 1px #000 dashed;
@@ -151,7 +151,7 @@ z-index: 1;
 
   #middle-orbit {
     position: absolute;
-    z-index: 1;
+    z-index: 0;
     width: 124px;
     height: 124px;
     top: 50%;
