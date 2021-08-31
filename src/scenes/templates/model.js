@@ -1,7 +1,6 @@
 import React, { Suspense, useRef } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Html, useGLTF } from '@react-three/drei'
-import styled from 'styled-components'
 
 const ModelObject = ({ modelPath }) => {
   const gltf = useGLTF(modelPath, true)
@@ -35,26 +34,22 @@ const HTMLContent = ({children, modelPath, positionY}) => {
   )
 }
 
-const Model = ({ className, modelPath, positionY }) => {
+const Model = ({ modelPath, positionY, positionZ}) => {
   return (
-    <div className={ className }>
-      <Canvas
-        colorManagement
-        camera={{position: [0, 0, 200], fov: 70}}
-      >
-        <Lights />
-        <Suspense fallback={null}>
-          <HTMLContent
-            modelPath={modelPath}
-            positionY={positionY}>
-              <h1>Title</h1>
-          </HTMLContent>
-        </Suspense>
-      </Canvas>
-    </div>
+    <Canvas
+      colorManagement
+      camera={{position: [0, 0, positionZ], fov: 70}}
+    >
+      <Lights />
+      <Suspense fallback={null}>
+        <HTMLContent
+          modelPath={modelPath}
+          positionY={positionY}>
+            {/* HTML elements */}
+        </HTMLContent>
+      </Suspense>
+    </Canvas>
   )
 }
 
-export default styled(Model)`
-`
-
+export default Model

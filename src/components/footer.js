@@ -1,6 +1,5 @@
 import styled from 'styled-components'
-import LinkedInIcon from '../assets/icons/linkedInIcon'
-import GithubIcon from '../assets/icons/githubIcon'
+import Social from './social'
 
 const Footer = ({ className }) => {
   const currentYear = new Date().getFullYear()
@@ -10,20 +9,7 @@ const Footer = ({ className }) => {
       <p className='description'>
         Three.js Sandbox
       </p>
-      <ul className='nav__menu'>
-        <li>
-          <a className='nav__menu__link' href='https://www.linkedin.com/in/leroy-van-biljouw-0691b01a9/' target='_blank' rel='noreferrer'>
-            <span className='nav__external'>LinkedIn</span>
-            <LinkedInIcon />
-          </a>
-        </li>
-        <li>
-          <a className='nav__menu__link' href='https://github.com/SqueezyDough' target='_blank' rel='noreferrer'>
-            <span className='nav__external'>GitHub</span>
-            <GithubIcon />
-          </a>
-        </li>
-      </ul>
+      <Social />
       <p className='copyright'>© {currentYear} Leroy van Biljouw</p>
     </footer>
   )
@@ -38,7 +24,8 @@ export default styled(Footer)`
   height: 10rem;
   margin: 4rem auto 0;
   padding: ${({ theme }) => theme.spacings.sm} 0;
-  border-top: 1px solid black;
+  border-top: 1px solid ${({ theme }) => theme.colors.white};
+  color: white;
 
   @media only screen and (min-width: ${({ theme }) => theme.screens.sm}) {
     height: auto;
@@ -53,6 +40,11 @@ export default styled(Footer)`
     padding: 0;
     width: 5rem;
     list-style-type: none;
+
+    > {
+      mix-blend-mode: difference;
+
+    }
   }
 
   .nav__external {

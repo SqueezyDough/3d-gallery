@@ -4,14 +4,11 @@ import { fonts } from './fonts'
 const GlobalStyle = createGlobalStyle`
 ${fonts}
 
-html, body {
-  background-color: white;
-}
-
 body {
   margin: 0;
   padding: ${({ theme }) => theme.spacings.sm};
   min-height: 100vh;
+  background-color: black;
   font-family: ${({ theme }) => theme.fonts.body};
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -42,18 +39,6 @@ ul {
 * {
   box-sizing: border-box;
   cursor: none;
-}
-
-main {
-  margin: 0 auto;
-  max-width: ${({ theme }) => theme.screens.xl};
-}
-
-canvas {
-  position: relative;
-  z-index: 0;
-  // default background color for canvas
-  background-color: ${({ theme }) => theme.colors.black};
 }
 `
 

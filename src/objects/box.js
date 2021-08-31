@@ -21,7 +21,7 @@ const Box = props => {
         onPointerOver={event => setHover(true)}
         onPointerOut={event => setHover(false)}>
         <boxGeometry args={[1, 1, 1]} />
-        <meshStandardMaterial color={hovered ? 'black' : 'red'} />
+        <meshStandardMaterial color={hovered ? 'purple' : 'red'} />
       </mesh>
     </>
   )

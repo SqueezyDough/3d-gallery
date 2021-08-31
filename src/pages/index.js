@@ -5,7 +5,6 @@ import { scenes } from '../scenes'
 import { noop} from '../utils'
 
 export default function Home() {
-  console.log(scenes)
   return (
     <>
       <Header />
@@ -14,7 +13,7 @@ export default function Home() {
           <ul>
             {scenes.map((scene, index) => {
               return <li key={index}>
-                <Section scene={scene} index={index +1} />
+                <Section scene={scene} index={index +1} wallpaper={scene.wallpaper} />
               </li>
             })}
           </ul>
