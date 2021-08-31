@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
-import LinkedInIcon from '../assets/linkedInIcon'
-import GithubIcon from '../assets/githubIcon'
+import LinkedInIcon from '../assets/icons/linkedInIcon'
+import GithubIcon from '../assets/icons/githubIcon'
 
 const Header = ({ className }) => {
   return (
@@ -65,9 +65,9 @@ z-index: 1;
     height: 32px;
     border-radius: 50%;
   }
-}
 
-.nav__external {
-  display: none;
+  &__external {
+    display: none;
+  }
 }
 `

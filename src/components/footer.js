@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import LinkedInIcon from '../assets/linkedInIcon'
-import GithubIcon from '../assets/githubIcon'
+import LinkedInIcon from '../assets/icons/linkedInIcon'
+import GithubIcon from '../assets/icons/githubIcon'
 
 const Footer = ({ className }) => {
   const currentYear = new Date().getFullYear()

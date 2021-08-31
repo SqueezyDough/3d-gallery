@@ -1,10 +1,11 @@
 import Header from '../components/header'
 import Footer from '../components/footer'
-import SceneWrapper from '../scenes/sceneWrapper'
+import Section from '../scenes/section'
 import { scenes } from '../scenes'
 import { noop} from '../utils'
 
 export default function Home() {
+  console.log(scenes)
   return (
     <>
       <Header />
@@ -13,7 +14,7 @@ export default function Home() {
           <ul>
             {scenes.map((scene, index) => {
               return <li key={index}>
-                <SceneWrapper scene={scene} index={index +1} />
+                <Section scene={scene} index={index +1} />
               </li>
             })}
           </ul>

@@ -52,6 +52,8 @@ main {
 canvas {
   position: relative;
   z-index: 0;
+  // default background color for canvas
+  background-color: ${({ theme }) => theme.colors.black};
 }
 `
 
