@@ -21,10 +21,12 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 position: absolute;
+z-index: 10;
 transform: translateX(-50%);
 left: 50%;
 width: 100%;
 max-width: ${({ theme }) => theme.screens.xl};
+mix-blend-mode: difference;
 
 .page-header {
   display: flex;

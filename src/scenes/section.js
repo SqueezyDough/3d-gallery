@@ -102,7 +102,7 @@ padding-top: 160px;
 .scene__meta {
   position: relative:
   z-index: 10;
-  padding: ${({ theme }) => theme.spacings.lg} 0;
+  padding: ${({ theme }) => theme.spacings.xl} 0;
   color: ${({ theme }) => theme.colors.white};
   mix-blend-mode: difference;
 
