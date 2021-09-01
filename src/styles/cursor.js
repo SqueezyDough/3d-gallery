@@ -11,7 +11,7 @@ const Cursor = ({ className }) => {
         InnerCursorY = useMotionValue(-100)
 
   // cursor behaviour
-  const cursorSpringConfig = { damping: 20, stiffness: 250 }
+  const cursorSpringConfig = { damping: 30, stiffness: 450 }
   const cursorXSpring = useSpring(cursorX, cursorSpringConfig)
   const cursorYSpring = useSpring(cursorY, cursorSpringConfig)
 
