@@ -29,5 +29,21 @@ export const scenes = [
         },
       ]
     }
+  }, {
+    canvas: <StarWarsSpeedBike />,
+    wallpaper: {
+      background: 'blue'
+    },
+    meta: {
+      title: 'Star Wars Speeder',
+      description: paragraphs(1),
+      references: [
+        {
+          type: 'artist',
+          title: 'Idmental',
+          link: 'https://sketchfab.com/3d-models/starwars-speeder-bike-free-download-1d0ea6fe43c1405b8d4b17722e166f6e'
+        },
+      ]
+    }
   }
 ]
