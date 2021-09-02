@@ -15,10 +15,6 @@ body {
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   overflow-x: hidden;
-
-  @media only screen and (min-width: ${({ theme }) => theme.screens.xl}) {
-    padding: 0;
-  }
 }
 
 h1, h2, h3, h4, h5, h6 {

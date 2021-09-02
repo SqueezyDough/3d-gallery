@@ -30,7 +30,11 @@ mix-blend-mode: difference;
 
 .page-header {
   display: flex;
-  padding: ${({ theme }) => theme.spacings.sm} 0;
+  padding: ${({ theme }) => theme.spacings.sm};
+
+  @media only screen and (min-width: ${({ theme }) => theme.screens.xl}) {
+    padding: ${({ theme }) => theme.spacings.sm} 0;
+  }
 
   &__section {
     &__title-p1, &__title-p2 {

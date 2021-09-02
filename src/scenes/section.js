@@ -9,37 +9,19 @@ import { noop } from '../utils'
 const Section = ({ className, scene, index }) => {
   const { fullscreen, toggleFullscreen } = useAppContext()
 
-  const containerVariants = {
-    fullscreen: {
-      maxWidth: 'unset',
-    },
-    initial: {
-      maxWidth: '1440px',
-    }
-  }
-
-  const canvasVariants = {
+  const variants = {
     fullscreen: {
       left: 0,
       top: 0,
       height: '100vh',
-      minWidth: '100vw'
-    }
-  }
-
-  const wallpaperVariants = {
-    fullscreen: {
-      left: 0,
-      top: 0,
-      height: '100vh',
-      minWidth: '100vw'
+      minWidth: '100vw',
     },
     initial: {
       transform: 'translate(-50%, -50%)',
       left: '60%',
       top: '50%',
       height: '30rem',
-      minWidth: '50rem'
+      minWidth: '50rem',
     }
   }
 
@@ -47,7 +29,6 @@ const Section = ({ className, scene, index }) => {
     <AnimateSharedLayout>
       <motion.article
         className={ className }
-        variants={ containerVariants }
         animate={ fullscreen ? 'fullscreen' : 'initial' }
       >
         <header className='scene__header'>
@@ -62,26 +43,24 @@ const Section = ({ className, scene, index }) => {
           </motion.div>
         </header>
 
-        <motion.main
-          className='scene__canvas'
-          variants={ canvasVariants }
-        >
-          <div className='scene__canvas__inner'>
+        <main className='scene__canvas' >
+          <motion.div className='scene__canvas__inner'>
             { scene.canvas }
-          </div>
+          </motion.div>
 
           <motion.div
             className='scene__canvas__wallpaper'
-            variants={ wallpaperVariants }
+            variants={ variants }
           >
             <motion.div
               className='scene__canvas__wallpaper__inner'
               style={scene.wallpaper}
-              whileHover={{ scale: [1, 1.2, 1.1], }}
+              whileHover={!fullscreen ? { scale: [1, 1.2, 1.1] } : noop()}
+              animate={ fullscreen ? '' : {borderRadius: '24px'}}
               onClick={() => toggleFullscreen()}
             />
           </motion.div>
-        </motion.main>
+        </main>
 
         {/* Show metadata if available  */}
         {scene.meta ? (
@@ -109,9 +88,13 @@ display: flex;
 flex-direction: column;
 justify-content: space-evenly;
 min-height: 100vh;
-margin: 0 auto;
-padding-top: 160px;
+overflow-x: hidden;
 position: relative;
+padding-top: 160px;
+
+@media only screen and (min-width: ${({ theme }) => theme.screens.xl}) {
+  padding-top: 0;
+}
 
 .scene__header {
   z-index: 10;
@@ -147,29 +130,27 @@ position: relative;
 
 .scene__canvas {
   position: absolute;
-  margin-top: -8rem;
   width: 100%;
 
   &__inner {
     pointer-events: none;
-    min-height: 100vh;
 
     canvas {
       position: relative;
       z-index: 10;
       min-height: 100vh;
+      width: 100%;
     }
   }
 
   &__wallpaper {
     position: absolute;
     z-index: 0;
-    height: 100%;
+    height: 100vh;
     width: 50rem;
 
     &__inner {
       height: 100%;
-      border-radius: 24px;
     }
   }
 }

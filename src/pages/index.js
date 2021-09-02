@@ -1,16 +1,17 @@
+import styled from 'styled-components'
 import Header from '../components/header'
 import Footer from '../components/footer'
 import Section from '../scenes/section'
 import { scenes } from '../scenes'
 import { noop} from '../utils'
 
-export default function Home() {
+export const Home = ({ className }) => {
   return (
-    <>
+    <div className={className}>
       <Header />
       <main>
         {scenes ? (
-          <ul>
+          <ul className='scenes-list'>
             {scenes.map((scene, index) => {
               return <li key={index}>
                 <Section scene={scene} index={index +1} />
@@ -20,6 +21,12 @@ export default function Home() {
         ) : noop()}
       </main>
       <Footer />
-    </>
+    </div>
   )
 }
+
+export default styled(Home)`
+.scenes-list {
+  margin: 0;
+}
+`
