@@ -121,7 +121,7 @@ export default styled(Cursor)`
   border-radius: 50%;
   background-color: white;
   mix-blend-mode: difference;
-  z-index: 10;
+  z-index: 100;
   pointer-events: none;
 }
 

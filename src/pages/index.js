@@ -13,7 +13,7 @@ export default function Home() {
           <ul>
             {scenes.map((scene, index) => {
               return <li key={index}>
-                <Section scene={scene} index={index +1} wallpaper={scene.wallpaper} />
+                <Section scene={scene} index={index +1} />
               </li>
             })}
           </ul>

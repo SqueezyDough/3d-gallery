@@ -6,7 +6,6 @@ ${fonts}
 
 body {
   margin: 0;
-  padding: ${({ theme }) => theme.spacings.sm};
   min-height: 100vh;
   background-color: black;
   font-family: ${({ theme }) => theme.fonts.body};

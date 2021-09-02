@@ -1,6 +1,7 @@
-import React, { Suspense, useRef } from 'react'
+import React, { Suspense, useEffect, useState, useRef } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Html, useGLTF } from '@react-three/drei'
+import { useAppContext } from '../../context'
 
 const ModelObject = ({ modelPath }) => {
   const gltf = useGLTF(modelPath, true)
@@ -34,7 +35,7 @@ const HTMLContent = ({children, modelPath, positionY}) => {
   )
 }
 
-const Model = ({ modelPath, positionY, positionZ}) => {
+const Model = ({ modelPath, positionY, positionZ }) => {
   return (
     <Canvas
       colorManagement
