@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react'
-import { useState } from 'react'
 import styled from 'styled-components'
-import { motion, AnimateSharedLayout } from 'framer-motion'
-import { useAppContext } from '../context'
+import { motion } from 'framer-motion'
+import { useAppContext, useWindowDimensions } from '../context'
 import ReferenceList from '../components/referenceList'
 import { noop } from '../utils'
 
@@ -15,17 +14,18 @@ const Section = ({ className, scene, index }) => {
       y: 0,
       top: 0,
       left: 0,
-      height: '100vh',
+      minHeight: '100vh',
+      maxHeight: '100%',
       width: '100vw',
     },
     initial: {
       x: '-50%',
       y: '-50%',
       top: '50%',
-      left: '60%',
-      height: '30rem',
-      width: '50rem',
-      borderRadius: '24px'
+      left: '50%',
+      minHeight: '30rem',
+      width: '30rem',
+      borderRadius: '50%'
     }
   }
 
@@ -34,18 +34,21 @@ const Section = ({ className, scene, index }) => {
       <header className='scene__header'>
         <span className='scene__header__index'>{index}.</span>
         <h1 className='scene__header__title'>{scene.meta.title ? scene.meta.title : 'Unnamed scene'}</h1>
-        <motion.div
-          className='scene__header__references'
-          animate={ fullscreen ? {display: 'none'} : {display: 'block'} }
-          >
-          <h2>References</h2>
-          <ReferenceList references={scene.meta.references} />
-        </motion.div>
       </header>
 
-      <main className='scene__canvas' >
+      <main className='scene__canvas'>
+        <div className='scene__canvas__inner'>
           { scene.canvas }
+        </div>
       </main>
+
+      <motion.div
+        className='scene__references'
+        animate={ fullscreen ? {display: 'none'} : {display: 'block'} }
+        >
+        <h2>References</h2>
+        <ReferenceList references={scene.meta.references} />
+      </motion.div>
 
       {/* Show metadata if available  */}
       {scene.meta ? (
@@ -69,7 +72,6 @@ const Section = ({ className, scene, index }) => {
         variants={ variants }
         animate={ fullscreen ? 'fullscreen' : 'initial' }
         style={scene.wallpaper}
-        // whileHover={!fullscreen ? { scale: [1, 1.2, 1.1] } : noop()}
         onClick={() => toggleFullscreen()}
       />
     </article>
@@ -79,7 +81,7 @@ const Section = ({ className, scene, index }) => {
 export default styled(Section)`
 display: flex;
 flex-direction: column;
-justify-content: center;
+justify-content: space-evenly;
 min-height: 100vh;
 overflow: hidden;
 position: relative;
@@ -94,6 +96,7 @@ padding-top: 160px;
   pointer-events: none;
   mix-blend-mode: difference;
   margin: 0 auto;
+  padding: ${({ theme }) => theme.spacings.sm};
   width: 100%;
   max-width: ${({ theme }) => theme.screens.xl};
 
@@ -103,7 +106,12 @@ padding-top: 160px;
   }
 
   &__index {
-    font-size: ${({ theme }) => theme.fontSize.xl};
+    display: none;
+
+    @media only screen and (min-width: ${({ theme }) => theme.screens.lg}) {
+      display: block;
+      font-size: ${({ theme }) => theme.fontSize.xxl};
+    }
   }
 
   &__title {
@@ -115,39 +123,50 @@ padding-top: 160px;
       font-size: ${({ theme }) => theme.fontSize.xxl};
     }
   }
+}
 
-  &__references {
-    color: ${({ theme }) => theme.colors.white};
-  }
+.scene__references {
+  margin: 0 auto;
+  width: 100%;
+  max-width: ${({ theme }) => theme.screens.xl};
+  color: ${({ theme }) => theme.colors.white};
 }
 
 .scene__canvas {
-  position: absolute;
+  width: 100%;
   pointer-events: none;
 
-  canvas {
-    position: relative;
+  &__inner {
+    position: absolute;
     z-index: 10;
-    height: 100vh;
+    top: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  canvas {
+    height: 100%;
     width: 100%;
   }
 }
 
 .scene__meta {
+  display: flex;
+  flex-direction: column;
   position: relative;
   z-index: 10;
   margin: 0 auto;
+  padding: ${({ theme }) => theme.spacings.sm};
   width: 100%;
   max-width: ${({ theme }) => theme.screens.xl};
-  padding: ${({ theme }) => theme.spacings.xl} 0;
   color: ${({ theme }) => theme.colors.white};
   mix-blend-mode: difference;
 
   @media only screen and (min-width: ${({ theme }) => theme.screens.lg}) {
-    display: flex;
+    flex-direction: row;
 
     &__references {
-      margin: 0 ${({ theme }) => theme.spacings.xl}
+      margin: 0 ${({ theme }) => theme.spacings.xl};
     }
   }
 
@@ -158,6 +177,7 @@ padding-top: 160px;
 
 .scene__wallpaper {
   position: absolute;
-  z-index: 1;
+  height: 100%;
+  max-height: 30rem;
 }
 `
