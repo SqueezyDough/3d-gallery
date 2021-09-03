@@ -100,6 +100,10 @@ padding-top: 160px;
   width: 100%;
   max-width: ${({ theme }) => theme.screens.xl};
 
+  @media only screen and (min-width: ${({ theme }) => theme.screens.xl}) {
+    padding: 0;
+  }
+
   &__index, &__title {
     font-family: ${({ theme }) => theme.fonts.headerBoldItalic};
     color: ${({ theme }) => theme.colors.white};
@@ -129,7 +133,12 @@ padding-top: 160px;
   margin: 0 auto;
   width: 100%;
   max-width: ${({ theme }) => theme.screens.xl};
+  padding: ${({ theme }) => theme.spacings.sm};
   color: ${({ theme }) => theme.colors.white};
+
+  @media only screen and (min-width: ${({ theme }) => theme.screens.xl}) {
+    padding: 0;
+  }
 }
 
 .scene__canvas {
@@ -138,7 +147,7 @@ padding-top: 160px;
 
   &__inner {
     position: absolute;
-    z-index: 10;
+    z-index: 100;
     top: 0;
     height: 100%;
     width: 100%;
@@ -164,6 +173,7 @@ padding-top: 160px;
 
   @media only screen and (min-width: ${({ theme }) => theme.screens.lg}) {
     flex-direction: row;
+    padding: ${({ theme }) => theme.spacings.sm};
 
     &__references {
       margin: 0 ${({ theme }) => theme.spacings.xl};
