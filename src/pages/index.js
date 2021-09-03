@@ -13,9 +13,11 @@ export const Home = ({ className }) => {
         {scenes ? (
           <ul className='scenes-list'>
             {scenes.map((scene, index) => {
-              return <li key={index}>
+              return (
+              <li key={index}>
                 <Section scene={scene} index={index +1} />
               </li>
+              )
             })}
           </ul>
         ) : noop()}
@@ -27,6 +29,13 @@ export const Home = ({ className }) => {
 
 export default styled(Home)`
 .scenes-list {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
   margin: 0;
+
+  li {
+    scroll-snap-align: start;
+  }
 }
 `
