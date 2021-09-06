@@ -28,10 +28,11 @@ export const Home = ({ className }) => {
 }
 
 export default styled(Home)`
+scroll-snap-type: y mandatory;
+overflow-y: scroll;
+height: 100vh;
+
 .scenes-list {
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  height: 100vh;
   margin: 0;
 
   li {

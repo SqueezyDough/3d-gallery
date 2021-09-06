@@ -22,7 +22,7 @@ export default styled(Footer)`
   align-items: center;
   max-width: ${({ theme }) => theme.screens.xl};
   height: 10rem;
-  margin: 4rem auto 0;
+  margin: 0 auto;
   padding: ${({ theme }) => theme.spacings.sm} 0;
   border-top: 1px solid ${({ theme }) => theme.colors.white};
   color: white;
