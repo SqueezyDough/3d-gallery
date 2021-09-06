@@ -85,7 +85,7 @@ justify-content: space-evenly;
 min-height: 100vh;
 overflow: hidden;
 position: relative;
-padding-top: 160px;
+padding: 160px 0 48px;
 
 @media only screen and (min-width: ${({ theme }) => theme.screens.xl}) {
   padding-top: 0;
@@ -130,6 +130,8 @@ padding-top: 160px;
 }
 
 .scene__references {
+  position: relative;
+  z-index: 10;
   margin: 0 auto;
   width: 100%;
   max-width: ${({ theme }) => theme.screens.xl};
