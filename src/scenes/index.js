@@ -12,7 +12,7 @@ const BD1 = () => {
   )
 }
 
-const StarWarsSpeedBikeB = () => {
+const StarWarsSpeedBike = () => {
   return (
     <Model
       modelPath='./models/starwars-speeder-bike/scene.gltf'
@@ -22,15 +22,15 @@ const StarWarsSpeedBikeB = () => {
   )
 }
 
-// const LowPolyCity = () => {
-//   return (
-//     <Model
-//       modelPath='./models/rat/scene.gltf'
-//       positionY={0}
-//       positionZ={50}
-//     />
-//   )
-// }
+const Coruscant = () => {
+  return (
+    <Model
+      modelPath='./models/coruscant/scene.gltf'
+      positionY={0}
+      positionZ={500}
+    />
+  )
+}
 
 export const scenes = [
   {
@@ -51,7 +51,7 @@ export const scenes = [
     }
   },
   {
-    canvas: <StarWarsSpeedBikeB />,
+    canvas: <StarWarsSpeedBike />,
     wallpaper: {
       background: 'radial-gradient(circle, rgba(233,209,114,1) 0%, rgba(221,175,87,1) 100%)'
     },
@@ -63,6 +63,23 @@ export const scenes = [
           type: 'artist',
           title: 'Idmental',
           link: 'https://sketchfab.com/3d-models/starwars-speeder-bike-free-download-1d0ea6fe43c1405b8d4b17722e166f6e'
+        },
+      ]
+    }
+  },
+  {
+    canvas: <Coruscant />,
+    wallpaper: {
+      background: 'radial-gradient(circle, rgba(223,96,19,1) 0%, rgba(126,60,18,1) 100%)'
+    },
+    meta: {
+      title: 'Coruscant',
+      description: paragraphs(1),
+      references: [
+        {
+          type: 'artist',
+          title: 'Mateusz Woliński',
+          link: 'https://sketchfab.com/3d-models/coruscant-802db255f49e4e1e8d398213ecc371ae'
         },
       ]
     }
